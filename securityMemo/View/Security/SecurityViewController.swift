@@ -34,6 +34,15 @@ class SecurityViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        oneLabel.text = "-"
+        twoLabel.text = "-"
+        threeLabel.text = "-"
+        fourLabel.text = "-"
+        password = ""
+    }
+    
     @IBAction func numberPadButtonTapped(_ sender: UIButton) {
         if sender.tag == 10 {
             oneLabel.text = "-"
@@ -56,7 +65,12 @@ class SecurityViewController: UIViewController {
                 password = "\(password)\(sender.tag)"
             }
         }
-        print(password)
+        if password.count == 4 {
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
