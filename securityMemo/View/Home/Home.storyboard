@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,20 +17,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmH-Hi-AfC">
-                                <rect key="frame" x="186" y="442.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgP-bP-Pm9" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="414" height="350"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="zPI-1X-470"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-84-KaP">
+                                <rect key="frame" x="0.0" y="394" width="414" height="502"/>
+                                <color key="backgroundColor" name="Ivory"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoTableViewCell" id="t5V-gU-OUo" customClass="MemoTableViewCell" customModule="securityMemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5V-gU-OUo" id="LaG-kr-zpz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fru-8t-A61">
+                                                    <rect key="frame" x="186" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fru-8t-A61" firstAttribute="centerX" secondItem="LaG-kr-zpz" secondAttribute="centerX" id="Vdg-kC-DEq"/>
+                                                <constraint firstItem="Fru-8t-A61" firstAttribute="centerY" secondItem="LaG-kr-zpz" secondAttribute="centerY" id="la1-6b-CaL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Ivory"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Ivory"/>
                         <constraints>
-                            <constraint firstItem="LmH-Hi-AfC" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="jPh-37-UsD"/>
-                            <constraint firstItem="LmH-Hi-AfC" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="zpl-xV-CaU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NMB-84-KaP" secondAttribute="trailing" id="1lu-Mv-jhw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qgP-bP-Pm9" secondAttribute="trailing" id="255-hk-INR"/>
+                            <constraint firstItem="NMB-84-KaP" firstAttribute="top" secondItem="qgP-bP-Pm9" secondAttribute="bottom" id="T5O-Jg-4j3"/>
+                            <constraint firstAttribute="bottom" secondItem="NMB-84-KaP" secondAttribute="bottom" id="VQA-0Z-fkm"/>
+                            <constraint firstItem="qgP-bP-Pm9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="as2-Ju-ClP"/>
+                            <constraint firstItem="NMB-84-KaP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iG1-vJ-7Qj"/>
+                            <constraint firstItem="qgP-bP-Pm9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="o9a-6O-czo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="qgP-bP-Pm9" id="oFK-3V-LWB"/>
+                        <outlet property="tableView" destination="NMB-84-KaP" id="adL-Pa-36f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,6 +75,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Ivory">
+            <color red="1" green="1" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
