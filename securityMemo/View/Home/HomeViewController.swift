@@ -9,7 +9,7 @@ import UIKit
 import FSCalendar
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,6 +26,16 @@ class HomeViewController: UIViewController {
     }
 }
 
+//MARK: - Event
+extension HomeViewController {
+    @IBAction func settingPageOpen(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Setting", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
+        
+        self.present(viewController, animated: true)
+    }
+}
+
 
 //MARK: - Configure
 extension HomeViewController {
@@ -39,11 +49,14 @@ extension HomeViewController {
 //MARK: - TableviewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemoTableViewCell") as? MemoTableViewCell else { return UITableViewCell() }
+        
+        cell.titleLabel.text = "11"
+        cell.DateLabel.text = "2222"
         
         return cell
     }
