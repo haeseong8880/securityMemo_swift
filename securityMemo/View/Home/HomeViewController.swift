@@ -32,7 +32,7 @@ extension HomeViewController {
         let storyboard = UIStoryboard(name: "Setting", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
         
-        self.present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

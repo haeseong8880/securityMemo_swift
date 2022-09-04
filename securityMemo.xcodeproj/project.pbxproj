@@ -16,6 +16,7 @@
 		3102062728BB248A004391AE /* securityMemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102062628BB248A004391AE /* securityMemoUITestsLaunchTests.swift */; };
 		3102063528BB25A6004391AE /* Security.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3102063428BB25A6004391AE /* Security.storyboard */; };
 		3102063728BB25B3004391AE /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102063628BB25B3004391AE /* SecurityViewController.swift */; };
+		311025B928C39A1100B707D3 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 311025B828C39A1100B707D3 /* SideMenu */; };
 		319F1CF528BB660000672D48 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 319F1CF428BB660000672D48 /* Home.storyboard */; };
 		319F1CF728BB660600672D48 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F1CF628BB660600672D48 /* HomeViewController.swift */; };
 		319F1CFA28BCC8E900672D48 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 319F1CF928BCC8E900672D48 /* FSCalendar */; };
@@ -71,6 +72,7 @@
 			files = (
 				319F1D0328BCD14600672D48 /* RealmSwift in Frameworks */,
 				319F1D0128BCD14600672D48 /* Realm in Frameworks */,
+				311025B928C39A1100B707D3 /* SideMenu in Frameworks */,
 				319F1CFA28BCC8E900672D48 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +218,7 @@
 				319F1CF928BCC8E900672D48 /* FSCalendar */,
 				319F1D0028BCD14600672D48 /* Realm */,
 				319F1D0228BCD14600672D48 /* RealmSwift */,
+				311025B828C39A1100B707D3 /* SideMenu */,
 			);
 			productName = securityMemo;
 			productReference = 3102060028BB2489004391AE /* securityMemo.app */;
@@ -292,6 +295,7 @@
 			packageReferences = (
 				319F1CF828BCC8E900672D48 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				319F1CFF28BCD14600672D48 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				311025B728C39A1100B707D3 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 3102060128BB2489004391AE /* Products */;
 			projectDirPath = "";
@@ -679,6 +683,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		311025B728C39A1100B707D3 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		319F1CF828BCC8E900672D48 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -698,6 +710,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		311025B828C39A1100B707D3 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 311025B728C39A1100B707D3 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
 		319F1CF928BCC8E900672D48 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 319F1CF828BCC8E900672D48 /* XCRemoteSwiftPackageReference "FSCalendar" */;
